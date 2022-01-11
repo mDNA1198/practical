@@ -94,24 +94,24 @@
                 />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/overViewTV"
-                android:text="@{data.overview}"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/overViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="4dp"
+                android:text="@{data.overview}"
                 android:textColor="@color/white"
-                />
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/overViewTitle" />
 
             <TextView
                 style="@style/textStyleCustom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/genresTitle"
-                android:text="Overview"
+                android:text="Genres"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/overViewTV"
@@ -119,17 +119,17 @@
                 />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/genresTV"
-                android:text="@{data.stringGenres}"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/genresTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="4dp"
+                android:text="@{data.stringGenres}"
                 android:textColor="@color/white"
-                />
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/genresTitle" />
 
             <TextView
                 style="@style/textStyleCustom"
@@ -144,17 +144,16 @@
                 />
 
             <TextView
+                android:id="@+id/durationTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/durationTV"
-                android:text="@{data.runtime + ` Minutes`}"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/durationTitle"
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="4dp"
+                android:text="@{data.runtime + ` Minutes`}"
                 android:textColor="@color/white"
-                />
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/durationTitle" />
 
             <TextView
                 style="@style/textStyleCustom"
@@ -194,17 +193,17 @@
                 />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/prodCompaniesTV"
-                android:text="@{data.stringProdCompanies}"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/prodCompaniesTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="4dp"
+                android:text="@{data.stringProdCompanies}"
                 android:textColor="@color/white"
-                />
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prodCompaniesTitle" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
