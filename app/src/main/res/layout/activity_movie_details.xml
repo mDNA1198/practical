@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.manish.practical.models.MovieDetails" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#192833"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="4dp"
+            >
+
+            <ProgressBar
+                android:id="@+id/progressIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="4dp"
+                android:elevation="10dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/backIV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:tint="#60000000"
+                />
+
+            <ImageView
+                android:id="@+id/frontIV"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                app:layout_constraintBottom_toBottomOf="@+id/backIV"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="15dp"
+                android:elevation="5dp"
+                />
+
+            <TextView
+                style="@style/textStyleCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/movieTitle"
+                android:text="@{data.originalTitle}"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/frontIV"
+                app:layout_constraintTop_toTopOf="@+id/frontIV"
+                android:layout_marginStart="10dp"
+                />
+
+            <TextView
+                style="@style/textStyleCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.tagline}"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/frontIV"
+                app:layout_constraintTop_toBottomOf="@+id/movieTitle"
+                android:layout_margin="10dp"
+                />
+
+            <TextView
+                style="@style/textStyleCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/overViewTitle"
+                android:text="Overview"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/backIV"
+                android:layout_margin="15dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/overViewTV"
+                android:text="@{data.overview}"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/overViewTitle"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                style="@style/textStyleCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/genresTitle"
+                android:text="Overview"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/overViewTV"
+                android:layout_margin="15dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/genresTV"
+                android:text="@{data.stringGenres}"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/genresTitle"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                style="@style/textStyleCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/durationTitle"
+                android:text="Duration"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/genresTV"
+                android:layout_margin="15dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/durationTV"
+                android:text="@{data.runtime + ` Minutes`}"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/durationTitle"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                style="@style/textStyleCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/releaseDateTitle"
+                android:text="Release Date"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/durationTV"
+                android:layout_margin="15dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/releaseDateTV"
+                android:text="@{data.releaseDate}"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/releaseDateTitle"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                style="@style/textStyleCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/prodCompaniesTitle"
+                android:text="Production Companies"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/releaseDateTV"
+                android:layout_margin="15dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/prodCompaniesTV"
+                android:text="@{data.stringProdCompanies}"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prodCompaniesTitle"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/white"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
